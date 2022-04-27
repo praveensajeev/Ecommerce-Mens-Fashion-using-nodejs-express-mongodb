@@ -96,22 +96,16 @@ router.get("/logout", (req, res) => {
 //cart routes
 router.get("/cart", verifylogin, async (req, res) => {
   let products=await userHelpers.getCartProducts(req.session.user._id)
-  let totalValue=await userHelpers.getTotalAmount(req.session.user._id)
-
-  cartCount=null
-  if (req.session.user) {
-    var cartCount=await userHelpers.getCarCount(req.session.user._id)
-  }
-  
-  res.render("user/cart",{products,'user':req.session.user,cartCount,totalValue});
+  console.log(products)
+  res.render('user/cart',{products})
 });
-router.get('/add-to-cart/:id',(req,res)=>{
+router.get('/add-to-cart/:id',verifylogin,(req,res)=>{
   console.log(req.params.id);
   console.log("hi");
   console.log(req.session.user._id);
   
   userHelpers.addToCart(req.params.id,req.session.user._id).then(()=>{
-    res.json({status:true})
+    res.redirect('/')
     
   })
  
@@ -123,10 +117,10 @@ router.get('/add-to-cart/:id',(req,res)=>{
 
 
 
-router.get("/view-image/:id", async (req, res) => {
+router.get("/view-image/:id",verifylogin, async (req, res) => {
   var imgId = req.params.id;
   let product = await userHelpers.imageDetails(imgId);
-  res.render("user/view-image", { product });
+  res.render("user/view-image", { product,'user':req.session.user });
 });
 
 //otp verfication

@@ -1,4 +1,4 @@
-<section class="vh-100 ">
+{{!-- <section class="vh-100 ">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -170,4 +170,148 @@ function validateForm(){
     }
 }
 
-        </script>
+        </script> --}}
+
+
+
+
+
+
+
+<!-- Login -->
+    <div class="container">
+      <div class="login-form">
+        <form action="/signup" method="post">
+          <h1>Sign Up</h1>
+          <p>
+            Please fill in this form to create an account. or
+            <a href="/login">Login</a>
+          </p>
+          <p class="text-danger">{{#if phoneAll}}Phone Number Already Exist {{/if}}{{#if email}}Email Already Exist{{/if}}</p>
+            <label for="name">Name</label>
+             <input type="text" name="name" id="userName" placeholder="user name" class="form-control form-control-lg"  required   onkeyup=" validateName()"/>
+                <p id="Name-error" class="error text-danger" style="color: red;"></p>
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Email" id="email" class="form-control form-control-lg" required onkeyup="validateEmail()"/>
+                <p id="Email-error" class="error text-danger" style="color: red;"></p>
+
+          <label for="psw">Password</label>
+       <input type="password" name="password" placeholder="Password" id="password" class="form-control form-control-lg" required  onkeyup="validatePassword()"/>
+                  <p id="Password-error" class="error text-danger" style="color: red;"></p>
+
+          <label for="psw-repeat">Repeat Password</label>
+           <input type="password" placeholder="confirm password" id="conformPassword" class="form-control form-control-lg"required  onkeyup="rePassword()"  >
+                  <p id="rePassword-error" class="error text-danger" style="color: red;"></p>
+
+          <label for="phoneNumber">Mobile number</label>
+          <input type="tel" maxlength="10" placeholder="PhoneNumber" name="phoneNumber" id="phoneNumber" class="form-control form-control-lg" required onkeyup="validatePhoneNUmber()"/>
+                  <p id="Phone-error" class="error text-danger" style="color: red;"></p>
+
+          <p>
+            By creating an account you agree to our
+            <a href="#">Terms & Privacy</a>.
+          </p>
+
+          <div class="buttons">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+<script>
+var nameError=document.getElementById('Name-error');
+var emailError=document.getElementById('Email-error');
+var PasswordError=document.getElementById('Password-error');
+var phoneError=document.getElementById('Phone-error')
+var submitError=document.getElementById('Submit-error');
+var conformPassword=document.getElementById('rePassword-error')
+
+
+
+function validateName(){
+    var name = document.getElementById('userName').value;
+
+    if(name.length==0){
+        nameError.innerHTML= 'Name is required';
+        return false;
+    }
+    if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+        nameError.innerHTML='Write full name';
+        return false;
+    }
+    nameError.innerHTML = '<i class="fa-solid fa-circle-check text-success"></i>';
+    return true;
+}
+
+  function validateEmail(){
+    var email = document.getElementById('email').value;
+
+    if(email.length==0){
+        emailError.innerHTML='Email is required'
+        return false;
+    }
+    if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        emailError.innerHTML = 'Email invalid'
+        return false;
+    }
+    emailError.innerHTML = '<i class="fa-solid fa-circle-check text-success"></i>';
+    return true;
+}
+function validatePassword(){
+    var message = document.getElementById('password').value;
+    var required=5;
+    var left=required-message.length;
+
+    if(left>0){
+      PasswordError.innerHTML=left+'more character required';
+        return false;
+    }
+
+   PasswordError.innerHTML= '<i class="fa-solid fa-circle-check text-success"></i>';
+    return true;
+}
+function rePassword(){
+  var password=document.getElementById('password').value;
+  var password1=document.getElementById('conformPassword').value;
+  if(password!=password1){
+    conformPassword.innerHTML='password is not match';
+    return false;
+  }
+    conformPassword.innerHTML='<i class="fa-solid fa-circle-check text-success"></i>';
+    return true;
+  
+}
+function validatePhoneNUmber(){
+    var message = document.getElementById('phoneNumber').value;
+    var required=10;
+    var left=required-message.length;
+
+    if(left>0){
+      phoneError.innerHTML=left+'more character required';
+        return false;
+    }
+
+  phoneError.innerHTML= '<i class="fa-solid fa-circle-check text-success"></i>';
+    return true;
+}
+
+
+function validateForm(){
+    if(!validateName() || !validateEmail() || !validatePassword() || !validatePhoneNUmber() || !rePassword()){
+
+        // submitError.style.display='block';
+        submitError.innerHTML='Please fix error to submit';
+        setTimeout(function(){submitError.style.display='none';},5000);
+        return false;
+    }
+}
+
+        </script>    
+
+

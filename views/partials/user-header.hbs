@@ -1,138 +1,87 @@
-  <header>
-      <nav class="navbar navbar-expand-lg navbar-light gb-dark" id="navbar" >
-        <div>
-        <a class="navbar-brand text-light ms-5 mt-1" href="/"><img src="/product-images/logo1.png" id="logo"  alt="logo"></a>
+<!-- Header -->
+    <header class="header" id="header">
+      <!-- Top Nav -->
+      <div class="top-nav">
+        <div class="container d-flex">
+          <p>Order Online Or Call Us: (001) 2222-55555</p>
+          <ul class="d-flex">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
-      
-        <div class="ms-auto me-5 ">
+      </div>
+      <div class="navigation">
+        <div class="nav-center container d-flex">
+        <a href="/" class="logo"><h1>Dans</h1></a>
 
-          <div class="collapse navbar-collapse ml-5 text-light" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item " id="love">
-               <a class="nav-link text-light "  aria-current="page" href="#"><i class="fas fa-heart fa-lg pe-2 count" style='font-size:20px;color:black' ></i></a> 
-
-              </li>
-
-
-<div >
-  <li class="nav-item me-4 ">
-                <a class="nav-link " aria-current="page" href="/cart">   
-                 <div  class='bi bi-cart4 pl-5' style='font-size:20px;color:black ' " id="cart-btn">
-       <span class="top-0 start-10 translate-middle p-1 count" id="cartCount"  style='font-size:20;px;color:rgb(255, 0, 0)' >{{cartCount}}
-    {{!-- <span class="vissibility-hidden" >New alerts</span> --}}
-  </span>
-                   
+          <ul class="nav-list d-flex">
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="product.html" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+            <a href="#terms" class="nav-link">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+            <li class="icons d-flex">
+            <a href="login.html" class="icon">
+              <i class="bx bx-user"></i>
+            </a>
+            <div class="icon">
+              <i class="bx bx-search"></i>
+            </div>
+            <div class="icon">
+              <i class="bx bx-heart"></i>
+              <span class="d-flex">0</span>
+            </div>
+            <a href="/cart" class="icon">
+              <i class="bx bx-cart"></i>
+              <span class="d-flex">0</span>
+            </a>
           
-                 </div></a>
-              </li> 
-</div>
+          </li>
+          </ul>
+
+          <div class="icons d-flex">
+            
+            <div class="icon">
+              <i class="bx bx-search"></i>
+            </div>
+            <div class="icon">
+              <i class="bx bx-heart"></i>
+              <span class="d-flex">0</span>
+            </div>
+            <a href="/cart" class="icon">
+              <i class="bx bx-cart"></i>
+              <span class="d-flex">0</span>
+            </a>
+               <a class="icon">
+           {{#if user}}
+           {{user.name}}
+           {{else}}
+           <i class="bx bx-user"></i>
+           {{/if}}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          {{#if user}}
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          {{else}}
+          <li><a class="dropdown-item" href="/login">Login</a></li>
+          {{/if}}
+          </div>
+
+          <div class="hamburger">
+            <i class="bx bx-menu-alt-left"></i>
+          </div>
+        </div>
+      </div>
     
-                      
-              <li class="nav-item mt-5 me-5">
-                <a class="nav-link text-light" href="/orders"><i class="bi bi-truck" style='font-size:25px;color:black'></i></a>
-              </li>
-            
-
-              <li class="nav-item mt-4">
-               <div class="dropdown">
-  <button class="btn btn-dark dropdown-toggle count mt-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    {{#if user}}
-    {{user.name}}
-    {{else}}
-      <i class="fas fa-user pe-2"></i>LOGIN
-    {{/if}}
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-     {{#if user}}
-    <li><a class="dropdown-item" href="/logout">Logout</a></li>
-    {{else}}
-      <li><a class="dropdown-item" href="/login">Login</a></li>
-{{/if}}
-  </ul>
-</div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-dark p-4">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link text-light" aria-current="page" href="#">
-
-                </a>
-              </li>
-              <li class="nav-item">
-             <div class="dropdown">
-   <ul class="navbar-nav">
-              <li class="nav-item me-4 mt-4">
-               <a class="nav-link text-light" aria-current="page" href="#"><i class="fas fa-heart fa-lg pe-2"></i> Wishilist</a> 
-
-              </li>
-
-
-
-              <li class="nav-item me-4 mt-4">
-                <a class="nav-link text-light" aria-current="page" href="/cart">    <div
-            class="fa fa-shopping-cart fa-lg text-light pe-2"
-            id="cart-btn"
-          ></div> cart</a>
-              </li>
-
-
-            
-              <li class="nav-item mt-4 me-5">
-                <a class="nav-link text-light" href="#"><i class="fas fa-shopping-bag fa-lg pe-2"></i>Orders</a>
-              </li>
-            
-
-              <li class="nav-item mt-4">
-               <div class="dropdown">
-  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    {{#if user}}
-    {{user.name}}
-    {{else}}
-      <i class="fas fa-user pe-2"></i>LOGIN
-    {{/if}}
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-     {{#if user}}
-    <li><a class="dropdown-item" href="/logout">Logout</a></li>
-    {{else}}
-      <li><a class="dropdown-item" href="/login">Login</a></li>
-{{/if}}
-  </ul>
-</div>
-              </li>
-
-            </ul>
-  
-</div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      </nav>
-
     </header>

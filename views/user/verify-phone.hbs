@@ -1,4 +1,4 @@
-
+{{!-- 
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -49,6 +49,77 @@
     </div>
   </div>
 </section>
+
+<script>
+let timerOn = true;
+function timer(remaining) {
+  var m = Math.floor(remaining / 60);
+  var s = remaining % 60;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
+  document.getElementById("countdown").innerHTML = `Time left: ${m} : ${s}`;
+  remaining -= 1;
+  if (remaining >= 0 && timerOn) {
+    setTimeout(function () {
+      timer(remaining);
+    }, 1000);
+    document.getElementById("resend").innerHTML = `
+    `;
+    return;
+  }
+  if (!timerOn) {
+    return;
+  }
+  document.getElementById("resend").innerHTML = `Don't receive the code? 
+  <span class="font-weight-bold text-color cursor" onclick="timer(60)">Resend
+  </span>`;
+}
+timer(60);
+</script> --}}
+
+
+
+
+
+
+
+
+
+
+
+<!-- Login -->
+    <div class="container" style="background-color: bisque; line-height:40px" >
+      <div class="login-form">
+        <form action="/verify-phone" method="post">
+          
+          <h2 class="fw-bold mb-2 text-uppercase">OTP Login</h2>
+              {{#if number}}
+              <p class="error text-danger">Invalid phone Number</p>
+              {{/if}}
+              {{#if userBlock}}
+               <p class="error text-danger">YOU ARE BLOCKED</p>
+              {{/if}}
+                        
+           <label class="form-label" for="typeEmailX">Enter Your Phone Number</label>
+          <input type="tel" maxlength="10" name="phoneVerify" class="form-control form-control-lg" required />
+                
+          
+          
+           <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="/login-phone">Login With OTP </a></p>          
+
+       
+
+          <div class="buttons">
+            
+            <button type="submit" class="signupbtn">GET OTP</button>
+          </div>
+           <p class="mb-0">Don't have an account? <a href="/signup" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
+        </form>
+      </div>
+    </div>
+
+
 
 <script>
 let timerOn = true;

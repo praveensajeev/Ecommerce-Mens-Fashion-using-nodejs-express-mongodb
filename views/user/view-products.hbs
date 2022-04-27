@@ -1,171 +1,249 @@
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img style="height: 35rem; width:100%" src="/product-images/IMAGES/Jackets-22-18_2048x.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-               
-            </div>
+      <div class="hero">
+      <div class="glide" id="glide_1">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="center">
+                <div class="left">
+                  <span class="">New Inspiration 2020</span>
+                  <h1 class="">NEW COLLECTION!</h1>
+                  <p>Trending from men's and women's  style collection</p>
+                  <a href="#" class="hero-btn">SHOP NOW</a>
+                </div>
+                <div class="right">
+                    <img class="img1" src="https://img.freepik.com/free-photo/cheerful-guy-bow-tie-showing-his-suspenders-smiling-happy-feeling-upbeat-standing-excited-pink-background_1258-78674.jpg?t=st=1651039218~exp=1651039818~hmac=a9a09fa3a500e999cfcc8bcd153de11af9fe7668c4079c6935afd6a600bc1b7c&w=1380" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="center">
+                <div class="left">
+                  <span>New Inspiration 2020</span>
+                  <h1>THE PERFECT MATCH!</h1>
+                  <p>Trending from men's and women's  style collection</p>
+                  <a href="#" class="hero-btn">SHOP NOW</a>
+                </div>
+                <div class="right">
+                  <img class="img2" src="https://img.freepik.com/free-photo/portrait-fashionable-boy-posing_23-2148184636.jpg?w=740" alt="">
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="carousel-item">
-            <img style="height: auto; width:100%" src="/product-images/IMAGES/Sneakers_2048x.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-            <img style="height: 35rem; width:100%"  src="/product-images/IMAGES/shorts-22-18_2048x.jpg" alt="Third slide">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<div >
-<h1 class="text-center mt-5"   > CATEGORY</h1>
-</div>
-
-
-
-
-<section >
-    {{!-- <div class="container mt-5">
-    <div class="row">
-        {{#each category}}
-        <div class="col-md-3">
-            <div class="card mt-3 border-0 bg-dark" style="width: 18rem;height:15rem; border-radius: 1rem">
-        <a href="/category-view/{{this.category}}">
-  <img class="rounded-circle ms-4" alt="100x100" src="/category-image/{{this._id}}.jpg" style="width: 250px;height:200px"  class="card-img-top" alt="..."></a>
-  <div class="card-body">
-    <h5 class="card-title text-center text-light">{{this.category}}</h5>
-  </div>
-</div>
-</div>
-{{/each}} --}}
-
-
-
- {{!-- something --}}
-<div class="container mt-5 container1 " >
-  <div class="row">
-       {{!-- <strong>STYLE 2</strong></h4> --}}
-      {{#each category}}
-    <div class="col-md-4">
-    <a href="/category-view/{{this.category}}">
-    <div class="profile-card-6 col-md-4" style="width:19rem; height:19rem "><img src="/category-image/{{this._id}}.jpg"
-        class="img img-responsive">
-      <div class="profile-name" style="color: #fefefe;">
       </div>
-     
-      <div class="profile-overview">
-        <div class="profile-overview">
-          <div class="row text-center" style="color: #f6f6f6;">
-           
-            <div class="col-xs-4" >
-                <h1 > {{this.category}}</h1>
-             
-            </div>
-            
+    </div>
+    
+
+    <!-- Categories Section -->
+    <section class="section category">
+        {{#each category}}
+      <a href="/category-view/{{this.category}}"><div class="cat-center">
+        <div class="cat">
+          <img src="/category-image/{{this._id}}.jpg" alt="" />
+          <div>
+            <p> {{this.category}}</p>
           </div>
         </div>
+        {{!-- <div class="cat">
+          <img src="./images/cat2.jpg" alt="" />
+          <div>
+            <p>ACCESSORIES</p>
+          </div>
+        </div>
+        <div class="cat">
+          <img src="./images/cat1.jpg" alt="" />
+          <div>
+            <p>MEN'S WEAR</p>
+          </div>
+        </div> --}}
+      </div></a>
+      {{/each}}
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section new-arrival">
+      <div class="title">
+        <h1>NEW ARRIVALS</h1>
+        <p>All the latest picked from designer of our store</p>
       </div>
-    </div></a>
-    </div>
-    {{/each}}
-  </div>
-  {{!-- <div class="col-md-4">
-    <h4 class="text-center">
-       
-  </div> --}}
+
+      <div class="product-center">
+          {{#each products}}
+        <div class="product-item">
+          <div class="overlay">
+            <a href="/view-image/{{this._id}}" class="product-thumb">
+              <img src="/product-images/{{this._id}}.jpg" alt="" />
+            </a>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="/view-image/{{this._id}}">{{this.brand}}</a>
+            
+            <div class="price"><span> ₹{{this.orginalPrice}}</span> ₹{{this.offerPrice}}</div>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart"></i></li>
+            <li><a><i class="bx bx-search"></i></a></li>
+            <li><a class="add-to-cart" href="/add-to-cart/{{this._id}}" onclick="addToCart('{{this._id}}')"><i class="bx bx-cart"></i></a></li>
+          </ul>
+        </div>
+        {{/each}}         
+      </div>
+    </section>
+
+
+    <!-- Promo -->
+
+    <section class="section banner">
+<div class="left">
+  <span class="trend">Trend Design</span>
+  <h1>New Collection 2021</h1>
+  <p>New Arrival <span class="color">Sale 50% OFF</span> Limited Time Offer</p>
+  <a href="#" class="btn btn-1">Discover Now</a>
 </div>
-{{!-- something --}}
-    
-</section>
-    
-<section>
-   <div class="container mt-5">
-    <div class="row">
-        {{#each products}}
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid" style="width: 15rem; height:auto">
-                <div class="product-image" >
-                    <a href="/view-image/{{this._id}}" class="image">
-                        <img class="pic-1" src="/product-images/{{this._id}}.jpg" style="width: 14rem; height:17rem">
-                        <img class="pic-2" src="/product-images1/{{this._id}}.jpg" style="width: 14rem; height:17rem">
-                    </a>
-                   
-                    <span class="product-discount-label">{{this.offerpercentage}}% off</span>
-                </div>
-                <div class="product-content">
-                    <ul class="rating">
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>        
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star disable"></li>
-                    </ul>
-                    <h3 class="title"><a href="#">{{this.brand}}</a></h3>
-                    <div class="price"><span> ₹{{this.orginalPrice}}</span> ₹{{this.offerPrice}}</div>
-                    <div class="product-button-group">
-                        <a class="product-like-icon" href="#"><i class="fas fa-heart"></i></a>
-                        <a class="add-to-cart" onclick="addToCart('{{this._id}}')"><i class="fa fa-shopping-bag"></i>ADD TO CART</a>
-                        <a class="product-compare-icon" href="#"><i class="fas fa-random"></i></a>
-                    </div>
-                </div>
+<div class="right">
+  <img src="./images/banner.png" alt="">
+</div>
+    </section>
+
+
+
+
+    <!-- Featured -->
+  
+    <section class="section new-arrival">
+      <div class="title">
+        <h1>Featured</h1>
+        <p>All the latest picked from designer of our store</p>
+      </div>
+
+      <div class="product-center">
+        <div class="product-item">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-7.jpg" alt="" />
+            </a>
+            <span class="discount">50%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">Quis Nostrud Exercitation</a>
+            <h4>$700</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart"></i></li>
+            <li><i class="bx bx-search"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+        <div class="product-item">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-4.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">Sonata White Men’s Shirt</a>
+            <h4>$800</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart"></i></li>
+            <li><i class="bx bx-search"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+        <div class="product-item">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-1.jpg" alt="" />
+            </a>
+            <span class="discount">40%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">Concepts Solid Pink Men’s Polo</a>
+            <h4>$150</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart"></i></li>
+            <li><i class="bx bx-search"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+        <div class="product-item">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-6.jpg" alt="" />
+            </a>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">Edor do eiusmod tempor</a>
+            <h4>$900</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart"></i></li>
+            <li><i class="bx bx-search"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact">
+      <div class="row">
+        <div class="col">
+          <h2>EXCELLENT SUPPORT</h2>
+          <p>We love our customers and they can reach us any time
+          of day we will be at your service 24/7</p>
+          <a href="" class="btn btn-1">Contact</a>
+        </div>
+        <div class="col">
+          <form action="">
+            <div>
+              <input type="email" placeholder="Email Address">
+            <a href="">Send</a>
             </div>
+          </form>
         </div>
-        {{/each}}
+      </div>
+    </section>
+
+    
+
+
+  <!-- PopUp -->
+  <div class="popup hide-popup">
+    <div class="popup-content">
+      <div class="popup-close">
+        <i class='bx bx-x'></i>
+      </div>
+      <div class="popup-left">
+        <div class="popup-img-container">
+          <img class="popup-img" src="./images/popup.jpg" alt="popup">
         </div>
+      </div>
+      <div class="popup-right">
+        <div class="right-content">
+          <h1>Get Discount <span>50%</span> Off</h1>
+          <p>Sign up to our newsletter and save 30% for you next purchase. No spam, we promise!
+          </p>
+          <form action="#">
+            <input type="email" placeholder="Enter your email..." class="popup-form">
+            <a href="#">Subscribe</a>
+          </form>
         </div>
-
-</section>
-
-
-
-
-
-{{!-- <section>
-    <div class="container mt-5">
-    <div class="row">
-        {{#each products}}
-        <div class="col-md-3">
-            <div class="card mt-3 xzoom  text-center bg-light" style="width: 18rem;height:30rem;border-radius: 1rem">
-
-  <a href="/view-image/{{this._id}}">      
-  <img src="/product-images/{{this._id}}.jpg" style="width: 200px;height:250px"  class="card-img-top mx-auto" alt="..."></a>
-  <div class="">
-    <p><span class="text-muted ms-3">{{this.brand}}</span><br>
-    <span >{{this.description}}</span>
-    
-    <br><span><span class="text-success fs-5">₹{{this.offerPrice}} </span>orginal price <span class="text-danger text-decoration-line-through fs-5">  ₹{{this.orginalPrice}}</span></span> 
-    <br><span class="fs-5"><span class=" fs-5">{{this.offerpercentage}}% off</span><br>Hurry, Only 7 left!</span></p>
-    
-    
-    <p class="text-center">
-    <button onclick="addToCart('{{this._id}}')" class=" btn btn-dark">Add to Cart</button>
-    </p>
-    
-    
-  </div>
-</div>
-</div>
-{{/each}}
-        </div>
+      </div>
     </div>
-</section> --}}
-    
+  </div>
 
 
 
-    <script>
+   <script>
         function addToCart(proId){
             $.ajax({
                 url:'/add-to-cart/'+proId,
@@ -181,3 +259,5 @@
             })
         }
     </script>
+
+  
